@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
-import Button from './components/Button'
 import Bullet from './components/Bullet';
 import Spaceship from './components/Spaceship';
 import Alien from './components/Alien.jsx';
-
 
 import StartGame from './components/StartGame';
 import FinishedGame from './components/FinishedGame';
@@ -182,7 +180,7 @@ class App extends React.Component {
     } else {
       // 1/ Le state beginning est par defaut sur true donc la 1ere page que l'on a est celle çi.
       if (this.state.beginning) {
-        
+
         return <StartGame beginGame={this.toBegin}/>;
         
       } else {
@@ -207,6 +205,9 @@ class App extends React.Component {
                   // commence à 0 et 0*4 égale la tête à toto les amis.
                   // Tout les Aliens ont la même valeur de row car ils sont sur la même ligne et avance à la même allure. 
                   return <Alien key={index} gridPositionColumn={(index + 1) * 4} gridPositionRow={this.state.alienPositionRow} />
+                }else{
+
+                  return "";
                 }
               })
             }
